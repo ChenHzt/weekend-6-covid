@@ -58,6 +58,8 @@ const getCovidData = async () => {
 
 const getCurrentContinentCountriesData = async () => {
     let res;
+    if(state.continentsData[state.currentContinent])
+        return;
 
     let api = `restcountries.herokuapp.com/api/v1/region/${state.currentContinent}`;
     if (state.currentContinent === 'world')

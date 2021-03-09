@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;0,900;1,300&display=swap" rel="stylesheet">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>
+            Covid-19 stats.
+        </h1>
+    </header>
+    <div class="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <section class="info">
+        <div class="chart-container">
+            <canvas id='myChart'></canvas>
+        </div>
+        <div class="country-stats-container">
+            <h2 class='country-stats-header'></h2>
+            <div class="country-stats-flex">
+                
+                <div class="country-stats">
+                    <span class="country-stats-label">Total Cases:</span>
+                    <span data-country-stats="confirmed" class="country-stats__value"></span>
+                </div>
+                <div class="country-stats">
+                    <span class="country-stats-label">New Cases:</span>
+                    <span data-country-stats="newCases" class="country-stats__value"></span>
+                </div>
+                <div class="country-stats">
+                    <span class="country-stats-label">Total Deaths:</span>
+                    <span data-country-stats="deaths" class="country-stats__value"></span>
+                </div>
+                <div class="country-stats">
+                    <span class="country-stats-label">New Deaths:</span>
+                    <span data-country-stats="newDeaths" class="country-stats__value"></span>
+                </div>
+                <div class="country-stats">
+                    <span class="country-stats-label">Total Recovered:</span>
+                    <span data-country-stats="recovered" class="country-stats__value"></span>
+                </div>
+                <div class="country-stats">
+                    <span class="country-stats-label">Critical:</span>
+                    <span data-country-stats="critical" class="country-stats__value"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="buttons-container">
+        <div class="buttons-continents">
+            <button data-continent="world" class='btn-continent'>World</button>
+            <button data-continent="asia" class='btn-continent'>Asia</button>
+            <button data-continent="europe" class='btn-continent'>Europe</button>
+            <button data-continent="africa" class='btn-continent'>Africa</button>
+            <button data-continent="oceania" class='btn-continent'>Oceania</button>
+            <button data-continent="americas" class='btn-continent'>Americas</button>
+        </div>
+        <div class="buttons-stats-modes">
+            <button data-stat-mode="confirmed" class="btn-stat-mode">confirmed</button>
+            <button data-stat-mode="deaths" class="btn-stat-mode">deaths</button>
+            <button data-stat-mode="recovered" class="btn-stat-mode">recovered</button>
+            <button data-stat-mode="critical" class="btn-stat-mode">critical</button>
+        </div>
+    </div>
+
+    <div class="countries-list-container">
+        <ul class='countries-list'>
+
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
